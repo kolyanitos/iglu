@@ -1,0 +1,343 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Visitor Site UI event",
+  "self": {
+    "vendor": "com.upwork.visitor_site",
+    "name": "ui_event",
+    "format": "jsonschema",
+    "version": "1-0-2"
+  },
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "string",
+      "enum": ["hire", "homepage"],
+      "description": "i.e. LocationCatalogID column"
+    },
+    "sublocation": {
+      "type": "string",
+      "enum": [
+        "topnavbar_searchicon","topnavbar_hamburgermenu",
+        "page", "primary_nav_bar", "sticky_nav_bar", "hero", "fl_tiles_filter", "fl_tiles_sort", "fl_tiles", "fl_expanded_tile", "hiw", "hhq_article_tiles", "payoff", "hiw_mobile", "mobile_nav", "footer", "subnavigation_bar", "business_benefits", "testimonial_video", "double_payoff", "logobar", "category_tiles", "links_list", "payroll", "service_levels"
+        ],
+      "description": "e.g. Top Nav Bar"
+    },
+    "event": {
+      "type": "string",
+      "enum": ["impression", "click", "enter", "unload"],
+      "description": "e.g. click"
+    },
+    "event_label": {
+      "type": "string",
+      "enum": [
+        "click_icon", "type_in_searchbar", "perform_search", "fl_job_search_dropdown", "fl_search_from_dropdown", "job_search_from_dropdown", "click_searchbar",
+        "page_load", "upwork_logo_image", "fl_search", "job_search", "hiw_link", "login_link", "sign_up_link", "post_a_job_button", "get_started_button", "location", "job_success", "hourly_rate", "best_match", "hourly_rate_low_to_high", "hourly_rate_high_to_low", "fl_tile_hover", "fl_tile_open", "sign_up_to_view_more_button", "sign_up_to_contact_button", "work_history_scroll", "create_an_account_to_review_link", "portfolio_create_an_account_link", "hhq_tile", "mobile_hiw_scroll", "desktop_hiw_scroll", "expand_nav", "browse_dropdown", "category", "about_us_link", "contact_us_link", "careers_link", "footer_section", "view_all_categories_link", "business_benefits_section", "request_demo_section", "post_a_job_for_free_button", "request_a_demo_button", "play_button", "pricing_link", "search", "web_dev_link", "mobile_dev_link", "design_link", "writing_link", "admin_support_link", "customer_service_link", "marketing_link", "accounting_link", "early_engagement_search_bar", "location_selection_dropdown_us", "location_selection_dropdown_worldwide", "watch_story_link", "logobar_section", "web_developers_tile", "mobile_developers_tile", "designers_creatives_tile", "writers_tile", "virtual_assistants_tile", "customer_service_agents_tile", "sales_marketing_tile", "accountants_consultants_tile", "see_all_categories_button", "general_skill_link", "payroll_link", "service_levels_section", "sign_up_for_free_button", "upwork_pro_learn_more_button", "upwork_enterprise_learn_more_button"
+      ],
+      "description": "e.g. fl_job_search_dropdown"
+    },
+    "extra_props": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "e.g. {\"newkey\":\"newval\",\"otherkey2\":\"otherval2\"...}"
+    },
+
+    "visitor_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "visitor_id"
+    },
+    "user_uid": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "user_id"
+    },
+    "organization_uid": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "org_id"
+    },
+    "channel": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. SEO, SEM"
+    },
+    "recognized": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. 0 or 1"
+    },
+    "perimeter_x": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum":0,
+      "maximum":100,
+      "description": "risk score from perimeter-x"
+    },
+    "segments": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items":{
+          "type": "string",
+          "description": ""
+      },
+      "description": "e.g. [\"MP-1234_Segment-1\", \"some-segment-name\"]"
+    },
+
+    "query": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "query string provided by user"
+    },
+    "context": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "it's freelancer search or job search"
+    },
+
+
+
+    "referrer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "desktop, ios_app, android_app, mobile_web, etc"
+    },
+    "domain_qt": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "e.g. false or true"
+    },
+    "touchscreen": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Defining whether device has a touchscreen"
+    },
+
+    "qt": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "e.g. {\"MP6364_DomainQT\":\"VisitorDomain\",\"CE2596_HipoReg\":\"Treatment3\"}"
+    },
+    "skill": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. PHP"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific category e.g. Web, mobile & Software Dev"
+    },
+    "subcategory": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific subcategory e.g. Mobile Development"
+    },
+    "service": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific service e.g. iOS Development"
+    },
+    "specialization": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific specialization e.g. iOS Game Development"
+    },
+    "attribute_group": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific attribute group e.g. watch"
+    },
+    "attribute": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific attribute e.g. java"
+    },
+    "preferred_label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page specific fancy name for an entity, e.g. Smart watches"
+    },
+
+
+    "query": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. jQuery"
+    },
+    "nav_category": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Writing"
+    },
+    "location_filter": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. United States"
+    },
+    "job_success_filter": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. 90 or above"
+    },
+    "hourly_rate_filter": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. 10 or below"
+    },
+    "freelancer_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. 1282811"
+    },
+    "hhq_article": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. hire-mobile-developers-for-your-small-business"
+    },
+    "clicked_skill": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. HTML5"
+    },
+    "freelancer_rank": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items":{
+          "type": "string",
+          "description": ""
+      },
+      "description": "[\"id1\", \"id2\", ... ]"
+    },
+
+    "subcategory_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Graphic Design"
+    },
+    "category_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Design & Creative"
+    },
+    "skills_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Adobe Photoshop"
+    },
+    "additional_skills_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Digital Agencies"
+    },
+    "job_duration": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. 3 to 6 months"
+    },
+    "job_time_commitment": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Less than 30 hrs/week"
+    },
+    "job_experience_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Intermediate"
+    },
+    "early_engagement_query": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "e.g. Full-time accountant"
+    }
+
+
+
+
+
+  },
+  "required": [
+    "location",
+    "sublocation",
+    "event",
+    "event_label"
+  ],
+  "additionalProperties": false
+}
