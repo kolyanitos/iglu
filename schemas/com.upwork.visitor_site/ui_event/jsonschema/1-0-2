@@ -24,7 +24,7 @@
     },
     "event": {
       "type": "string",
-      "enum": ["impression", "click", "enter", "unload"],
+      "enum": ["impression", "click", "enter", "unload", "segmentation"],
       "description": "e.g. click"
     },
     "event_label": {
