@@ -98,6 +98,24 @@
       },
       "description": "e.g. [\"MP-1234_Segment-1\", \"some-segment-name\"]"
     },
+    "search_results": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items":{
+          "type": "string",
+          "description": ""
+      },
+      "description": ""
+    },
+    "search_query": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": ""
+    },
 
     "query": {
       "type": [
