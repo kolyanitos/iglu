@@ -111,10 +111,10 @@
     },
     "search_query": {
       "type": [
-        "string",
+        "object",
         "null"
       ],
-      "description": ""
+      "description": "query string provided by user"
     },
 
     "query": {
